@@ -42,9 +42,3 @@ def home():
             return render_template("status.html",firstname=firstname,lastname=lastname,status=status,email=email)
 app.run()
 
-!git clone https://github.com/itsnikhilkumar29/Simple-Epass-Generation
-
-# Commented out IPython magic to ensure Python compatibility.
-# %cd /content/Simple-Epass-Generation/
-!python app.ipynb
-
