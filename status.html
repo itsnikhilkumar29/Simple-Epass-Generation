@@ -1,10 +1,33 @@
 <html>
+<head>
+	<title>Form</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
 <body>
-<pre>
-Dear {{ firstname }} {{ lastname }},
-Your registered Email is {{ email }}
-And Your Status of Registration is 
-{{ status }}
+<div class='container' >
+<center>
+<pre style="font-size:20">
+<h2>E Pass</h2>
+Name: {{user['name']}}
+EPassID: {{user['mobile']}}
+Email: {{user['email']}}
+Aadhar: {{user['aadhar']}}
+Date: {{user['date']}}
+Source Code: {{user['source']}}
+Destination Code: {{user['destination']}}
+Status: {{status}}
 </pre>
+<button>Print</button>
+</center>
+</div>
 </body>
+<script>
+document.querySelector('button').addEventListener('click',()=>{
+	document.querySelector('button').style.display='none';
+	print();
+	document.querySelector('button').style.display='block';
+})
+</script>
 </html>
