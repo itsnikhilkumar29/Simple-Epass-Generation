@@ -40,5 +40,6 @@ def home():
         else:
             status="not confirmed,because destination state has more covid effected people we care for your health"
             return render_template("status.html",firstname=firstname,lastname=lastname,status=status,email=email)
+print("application about to run")
 app.run()
 
