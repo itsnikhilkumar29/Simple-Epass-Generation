@@ -2,7 +2,7 @@ import requests
 from flask import Flask,request,render_template,redirect
 from twilio.rest import Client
 account_sid="AC0ff7ddfb5928083b446d7e2ff9e76f95"
-auth_token="b9e556b358310a2060af765f281a73ba"
+auth_token="8374095d7b647dfe42b346eef8f1b503"
 client=Client(account_sid,auth_token)
 
 url="https://api.covid19india.org/v4/data.json"
@@ -23,6 +23,10 @@ def home():
         date=request.form['date']
         ss=request.form["source"]
         ds=request.form["dest"]
+        if ss=="" or ds=="":
+            return render_template('home.html',msg='Select Source and Destination')
+        if ss==ds:
+            return render_template('home.html',msg="You cant provide Same state for both Source and Destination")
         destination_state_population=d[ds]["meta"]["population"]
         destination_state_confirmed_cases=d[ds]["total"]["confirmed"]
         print(destination_state_confirmed_cases/destination_state_population)
