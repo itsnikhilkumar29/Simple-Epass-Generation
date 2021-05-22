@@ -16,7 +16,11 @@
 <br>
 <input type='email' name ='email' placeholder='Email' required class='form-control'>
 <br>
+{% if msg %}
+{{msg}}
+{% endif %}
 <select name='source' class='form-control'>
+  <option value="">Select Source State</option>
 	<option value="AN">Andaman and Nicobar</option>
 	<option value="AP">Andhra Pradesh</option>
 	<option value="AR">Arunachal Pradesh</option>
@@ -56,6 +60,7 @@
 </select>
 <br>
 <select name='dest' class='form-control'>
+  <option value="">Select Destination State</option>
 	<option value="AN">Andaman and Nicobar</option>
 	<option value="AP">Andhra Pradesh</option>
 	<option value="AR">Arunachal Pradesh</option>
